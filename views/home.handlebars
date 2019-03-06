@@ -1,8 +1,12 @@
 <div>
-	<h2>Teams Available</h2>
-	<ul class="mt-5 list-group">
-		{{#each teams}}
-			<li class="list-group-item m-2 lead">{{this.name}}</li>
-		{{/each}}
-	</ul>
+	<h2>Today's Predictions</h2>
+	{{#if teams}}
+		<ul class="mt-5 list-group">
+			{{#each teams}}
+				<li class="list-group-item m-2 lead">{{this.name}}</li>
+			{{/each}}
+		</ul>
+	{{else}}
+		<p class="lead text-muted">No Available Predictions</p>
+	{{/if}}
 </div>

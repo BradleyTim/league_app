@@ -4,6 +4,7 @@ const uuid = require('uuid');
 
 const teams = require('../Teams');
 
+
 router.get('/', (req, res) => {
 	res.json(teams);
 });
@@ -29,8 +30,7 @@ router.post('/', (req, res) => {
 
 	teams.push(newTeam);
 
-	// res.json(teams);
-	res.redirect('/');
+	res.json(teams);
 });
 
 module.exports = router;
