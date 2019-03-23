@@ -4,9 +4,7 @@ const exphbs  = require('express-handlebars');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const teams = require('./Teams');
 const web = require('./routes/web');
-const api = require('./routes/api');
 
 const app = express();
 
@@ -26,6 +24,5 @@ app.set('view engine', 'handlebars');
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use('/', web);
-app.use('/api/teams', api)
 
 app.listen(PORT, () => console.log(`server started on port ${PORT}!!!`));

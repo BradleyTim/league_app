@@ -1,8 +1,5 @@
 const express = require('express');
 const router = express.Router();
-//const teams = require('../Teams');
-
-const Team = require('../models/Team');
 
 
 // define the home page route
@@ -27,7 +24,7 @@ router.get('/newteam', (req, res) => {
 	res.render('newteam');
 });
 
-router.post('/', (req, res) => {
+router.post('/newteam', (req, res) => {
 
 	const { name } = req.body;
 
