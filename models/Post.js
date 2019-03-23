@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-const TeamSchema = new mongoose.Schema({
-	name: {
+const PostSchema = new mongoose.Schema({
+	text: {
 		type: String,
 		required: true
 	},
@@ -11,6 +11,6 @@ const TeamSchema = new mongoose.Schema({
 	}
 });
 
-const Team = mongoose.model('Team', TeamSchema);
+const Post = mongoose.model('Post', PostSchema);
 
-module.exports = Team;
+module.exports = Post;

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const Team = require('../models/Team');
+const Team = require('../models/Post');
 
 
 // define the home page route
@@ -34,11 +34,11 @@ router.post('/', (req, res) => {
 		return res.redirect('/newpost')
 	}
 
-	const newTeam = new Team({
+	const newPost = new Post({
 		name,
 	});
 
-	newTeam.save();
+	newPost.save();
 
 	res.redirect('/');
 
