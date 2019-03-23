@@ -1,12 +1,12 @@
 <div>
-	<h2>Top Predictions</h2>
-	{{#if teams}}
+	<h2 class="text-center">Top Predictions</h2>
+	{{#if posts}}
 		<ul class="mt-5 list-group">
-			{{#each teams}}
-				<li class="list-group-item m-2 lead">{{this.name}}</li>
+			{{#each posts}}
+				<li class="list-group-item m-2 lead">{{this.text}}</li>
 			{{/each}}
 		</ul>
 	{{else}}
-		<p class="lead text-muted">No Available Predictions</p>
+		<p class="lead text-center text-muted">No Available Predictions</p>
 	{{/if}}
 </div>
