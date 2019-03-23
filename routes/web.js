@@ -26,7 +26,7 @@ router.get('/newpost', (req, res) => {
 	res.render('newpost');
 });
 
-router.post('/newtpost', (req, res) => {
+router.post('/', (req, res) => {
 
 	const { name } = req.body;
 
