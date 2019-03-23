@@ -1,18 +1,18 @@
 const express = require('express');
 const router = express.Router();
 
-const Team = require('../models/Post');
+const Post = require('../models/Post');
 
 
 // define the home page route
 router.get('/', (req, res) => {
 
-	Team.find({}, (err, teams) =>{
+	Post.find({}, (err, posts) =>{
 		if(err) {
 			console.log('There was an ERROR!');
 		} else{
-			console.log(teams);
-			res.render('home', { teams });
+			console.log(posts);
+			res.render('home', { posts });
 		}
 	})
 });
@@ -22,20 +22,22 @@ router.get('/about', (req, res) => {
   res.render('about');
 });
 
+//new post form
 router.get('/newpost', (req, res) => {
 	res.render('newpost');
 });
 
-router.post('/', (req, res) => {
+//add new post
+router.post('/newpost', (req, res) => {
 
-	const { name } = req.body;
+	const { text } = req.body;
 
-	if(!name) {
+	if(!text) {
 		return res.redirect('/newpost')
 	}
 
 	const newPost = new Post({
-		name,
+		text,
 	});
 
 	newPost.save();
